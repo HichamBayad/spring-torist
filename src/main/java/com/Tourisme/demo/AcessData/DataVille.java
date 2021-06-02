@@ -13,4 +13,9 @@ import com.Tourisme.demo.Model.Ville;
 public interface DataVille extends JpaRepository<Ville,Integer>{
 	@Query(value="SELECT * FROM ville where ID_p = :pametr",nativeQuery=true)
 	public List <Ville> getCity(@Param("pametr")int id_p );
+	@Query(value="SELECT * FROM ville where id_v = :pametr",nativeQuery=true)
+	public Ville getCitys(@Param("pametr")int id_v );
+	@Query(value="SELECT count(*) FROM ville where ID_p = :pametr",nativeQuery=true)
+	public int countCity(@Param("pametr")int id_p );
+	
 }
